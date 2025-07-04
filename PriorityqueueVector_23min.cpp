@@ -67,11 +67,11 @@ void PriorityQueue<T, C>::pop() {
 				stop = true;
 			}
 		}
-		else if (left < pq.size() && right > pq.size() && comp(pq[left], pq[pos])) {
+		else if (left < pq.size() && right >= pq.size() && comp(pq[left], pq[pos])) {
 			swap(pq[pos], pq[left]);
 			pos = left;
 		}
-		else if (left > pq.size() && right < pq.size() && comp(pq[right], pq[pos])) {
+		else if (left >= pq.size() && right < pq.size() && comp(pq[right], pq[pos])) {
 			swap(pq[pos], pq[right]);
 			pos = right;
 		}
